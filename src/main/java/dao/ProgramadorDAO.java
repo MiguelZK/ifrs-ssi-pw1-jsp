@@ -44,7 +44,7 @@ public class ProgramadorDAO {
 		}
 	}
 	
-	public Programador find(int id) {
+	public Programador find(long id) {
 		try {
 			em = JPAUtil.getEntityManager();
 			Programador pessoafisica = em.find(Programador.class, id);

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale = 1, shrink-to-fit=no">
+<title>Cadastrar Programador</title>
+<link rel="stylesheet" type="text/css"
+	href="bibliotecas/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="bibliotecas/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/sb-admin.min.css">
+
+</head>
+<body class="bg-dark">
+	<div class="container">
+		<div class="card card-register mx-auto mt-5">
+			<div class="card-header">Cadastrar Programador</div>
+			<div class="card-body">
+				<form method="POST" action="direcionaCad.jsp">
+					<div class="form-group">
+						<label for="nomeProg">Nome:</label> <input type="text"
+							class="form-control" id="nome" name="nome"
+							placeholder="Digite o Nome do Programador:">
+					</div>
+					<div class="form-group">
+						<label for="endProg">Endereço:</label> <input type="text"
+							class="form-control" id="endereco" name="endereco"
+							placeholder="Digite seu Endereço:">
+					</div>
+					<div class="form-group">
+						<label for="emailProg">E-mail:</label> <input type="text"
+							class="form-control" id="email" name="email"
+							placeholder="Digite seu Email:">
+					</div>
+					<div class="form-group">
+						<label for="salarioProg">Salário:</label> <input type="number"
+							class="form-control" id="salario" name="salario"
+							placeholder="Digite seu Salário, usando ponto para separar os centavos:">
+					</div>
+					<div class="form-group">
+						<label for="cpfProg">CPF:</label> <input type="text"
+							class="form-control" id="cpf" name="cpf"
+							placeholder="Digite o CPF do Programador:">
+					</div>
+					<div class="form-group">
+						<label for="linguagemProg">Linguagem:</label> <input type="text"
+							class="form-control" id="linguagemProg" name="linguagemProg"
+							placeholder="Digite a Linguagem de maior domínio:">
+					</div>
+					<div class="form-group">
+						<label for="projetosProg">Projetos:</label> <input type="text"
+							class="form-control" id="projetos" name="projetos"
+							placeholder="Digite os Projetos em andamento, separados por Ponto-e-Vírgula:">
+					</div>
+					<button class="btn btn-primary btn-block">Cadastrar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="bibliotecas/jquery/jquery.min.js"></script>
+	<script src="bibliotecas/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="bibliotecas/jquery-easing/jquery.easing.min.js"></script>
+</body>
+</html>
