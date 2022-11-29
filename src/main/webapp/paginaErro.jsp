@@ -3,7 +3,7 @@
 <%@page errorPage="paginaErro.jsp"%>
 <%@page isErrorPage="true"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <title>Erro 🤔 - algo não saiu como esperado</title>

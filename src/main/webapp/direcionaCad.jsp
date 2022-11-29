@@ -4,7 +4,7 @@
 <%@page import="java.util.*"%>
 <%@page errorPage="paginaErro.jsp"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <title>Direcionamento de Cadastro</title>

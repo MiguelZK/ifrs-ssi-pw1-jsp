@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@page errorPage="paginaErro.jsp"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <title>Lista de Programadores</title>

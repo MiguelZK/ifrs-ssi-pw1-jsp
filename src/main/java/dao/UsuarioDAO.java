@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import classes.Usuario;
@@ -10,8 +11,9 @@ import util.JPAUtil;
 public class UsuarioDAO {
 
 	private EntityManager em;
-	
-	public UsuarioDAO() {}
+
+	public UsuarioDAO() {
+	}
 
 	public boolean insert(Usuario usuario) {
 		try {
@@ -43,7 +45,7 @@ public class UsuarioDAO {
 			return false;
 		}
 	}
-	
+
 	public Usuario find(int id) {
 		try {
 			em = JPAUtil.getEntityManager();
@@ -54,16 +56,16 @@ public class UsuarioDAO {
 				em.getTransaction().rollback();
 			}
 			return null;
-		} 
+		}
 	}
-	
+
 	public List<Usuario> findEmail(String email) {
 		try {
 			em = JPAUtil.getEntityManager();
 			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u where u.email = :email", Usuario.class);
 			query.setParameter("email", email);
 			List<Usuario> users = query.getResultList();
-			
+
 			return users;
 		} catch (RuntimeException e) {
 			if (em.getTransaction().isActive()) {
@@ -71,7 +73,26 @@ public class UsuarioDAO {
 			}
 			e.printStackTrace();
 			return null;
-		} 
+		}
+	}
+
+	public boolean confirmUser(String email, String senha) {
+		try {
+			em = JPAUtil.getEntityManager();
+			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u "
+					+ "WHERE u.email = :email AND u.senha = :senha",
+					Usuario.class);
+			query.setParameter("email", email);
+			query.setParameter("senha", senha);
+			return !query.getResultList().isEmpty();
+
+		} catch (RuntimeException e) {
+			if (em.getTransaction().isActive()) {
+				em.getTransaction().rollback();
+			}
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	public boolean remove(Long id) {
@@ -99,6 +120,6 @@ public class UsuarioDAO {
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 			return null;
-		} 
+		}
 	}
 }

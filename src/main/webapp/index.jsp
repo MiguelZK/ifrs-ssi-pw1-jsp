@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page errorPage="paginaErro.jsp" %>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale = 1, shrink-to-fit=no">
-	<title>Template Master</title>
+	<title>Página Principal</title>
 	<link rel="stylesheet" type="text/css" href="bibliotecas/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bibliotecas/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="bibliotecas/datatables/dataTables.bootstrap4.css">
@@ -29,8 +30,7 @@
 					</a>
 				</li>
 				<li class="nav-item" data-toggle="tooltip" data-placement="right">
-					<a class="nav-link" href="adicionaProg.jsp
-					">
+					<a class="nav-link" href="adicionaProg.jsp">
 						<i class="fa fa-fw fa-dashboard"></i>
 						<span class="nav-link-text">Cadastrar Programador</span>
 					</a>
@@ -49,30 +49,20 @@
 						<i class="fa fa-sign-out">Logout</i>
 					</a>
 				</li>
-				
 			</ul>
-
 		</div>
 	</nav>
-	
-	 <jsp:useBean id="programadorBean" class="classes.Programador" scope="request"/>
-     <jsp:setProperty name="programadorBean" property="*" /> 
-        <%
-            if (!programadorBean.insert()) {
-        %>
-         <h1> Erro ao cadastrar Programador</h1>
-        <%}%>
 
-    	<jsp:include page="listarProgs.jsp"></jsp:include>
+    <jsp:include page="listarProgs.jsp"></jsp:include>
     		
-		<footer class="sticky-footer">
-			<div class="container">
-				<div class="text-center">
-					<small>Copyright Seu Site 2017</small>
-				</div>
+	<footer class="sticky-footer">
+		<div class="container">
+			<div class="text-center">
+				<small>Copyright Seu Site 2017</small>
 			</div>
-		</footer>
-	
+		</div>
+	</footer>
+
 	
 	<script src="bibliotecas/jquery/jquery.min.js"></script>
 	<script src="bibliotecas/bootstrap/js/bootstrap.bundle.min.js"></script>
