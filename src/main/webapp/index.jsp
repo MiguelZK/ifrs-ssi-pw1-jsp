@@ -30,7 +30,7 @@
 					</a>
 				</li>
 				<li class="nav-item" data-toggle="tooltip" data-placement="right">
-					<a class="nav-link" href="adicionaProg.jsp">
+					<a class="nav-link" href="cadProg.html">
 						<i class="fa fa-fw fa-dashboard"></i>
 						<span class="nav-link-text">Cadastrar Programador</span>
 					</a>

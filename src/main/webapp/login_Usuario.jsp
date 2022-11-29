@@ -3,6 +3,7 @@
 <%@page import="classes.*"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.*"%>
+<%@page errorPage="paginaErro.jsp"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

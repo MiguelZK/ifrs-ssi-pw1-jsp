@@ -7,22 +7,20 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Direcionamento de Cadastro</title>
+<title>Direcionamento de Edição</title>
 </head>
 <body>
 	<jsp:useBean id="programadorBean" class="classes.Programador"
 		scope="request" />
 	<jsp:setProperty name="programadorBean" property="*" />
 	<%
-	if (programadorBean.insert()) {
+	if (programadorBean.update()) {
 	%>
-<%-- 	<jsp:forward page="cadSucesso.jsp" /> --%>
-	<jsp:forward page="index.jsp?msg=Registro Incluido com sucesso"></jsp:forward>
+	<jsp:forward page="index.jsp?msg=Registro editado com sucesso"></jsp:forward>
 	<%
 	} else {
 	%>
-<%-- 	<jsp:forward page="cadErro.jsp" /> --%>
-	<jsp:forward page="index.jsp?msg=Erro ao incluir registro"></jsp:forward>
+	<jsp:forward page="index.jsp?msg=Erro ao editar registro"></jsp:forward>
 	<%
 	}
 	%>

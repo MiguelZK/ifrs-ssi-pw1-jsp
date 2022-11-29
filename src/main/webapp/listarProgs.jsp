@@ -24,15 +24,27 @@
 	<jsp:useBean id="programadorBean" class="classes.Programador"
 		scope="request" />
 	<%
-	List<Programador> lista = programadorBean.listAll();
-	request.setAttribute("listaReq", lista);
+		List<Programador> lista = programadorBean.listAll();
+		request.setAttribute("listaReq", lista);
+		String msg = request.getParameter("msg");
 	%>
 	<div class="content-wrapper">
 		<div class="container-fluid">
 
 			<div class="row">
 				<div class="col-12">
+					<%
+						if (msg != null) {
+					%>
+					<h1><%=msg%> - Programadores Cadastrados
+					</h1>
+					<%
+						} else {
+					%>
 					<h1>Programadores Cadastrados</h1>
+					<%
+						}
+					%>
 				</div>
 			</div>
 			<div class="card mb-3">
@@ -110,33 +122,3 @@
 	<script src="js/sb-admin-datatables.min.js" type="text/javascript"></script>
 </body>
 </html>
-
-<%-- 
-<body>
-	<jsp:useBean id="programadorBean" class="classes.Programador"
-		scope="request" />
-	<%
-	List<Programador> lista = programadorBean.listAll();
-	request.setAttribute("lista", lista);
-	%>
-	<table border="1">
-		<c:forEach var="programador" items="${lista}">
-			<tr>
-				<td>${programador.getNome()}</td>
-				<td>${programador.getEndereco()}</td>
-				<td>${programador.getEmail()}</td>
-				<td>${programador.getSalario()}</td>
-				<td>${programador.getCpf()}</td>
-				<td>${programador.getLinguagemProg()}</td>
-				<td>${programador.getProjetos()}</td>
-				<td><a
-					href="excluirProgramador.jsp?idFuncionario=${programador.getIdFuncionario()}">
-						Excluir </a></td>
-				<td><a
-					href="editProgramador.jsp?idFuncionario=${programador.getIdFuncionario()}">
-						Editar </a></td>
-			</tr>
-		</c:forEach>
-	</table>
-</body>
-</html> --%>
