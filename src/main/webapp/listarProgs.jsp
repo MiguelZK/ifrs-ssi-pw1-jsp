@@ -36,8 +36,8 @@
 					<%
 						if (msg != null) {
 					%>
-					<h1><%=msg%> - Programadores Cadastrados
-					</h1>
+					<p><%=msg%></p> 
+					<h1>Programadores Cadastrados</h1>
 					<%
 						} else {
 					%>
@@ -107,7 +107,7 @@
 		<footer class="sticky-footer">
 			<div class="container">
 				<div class="text-center">
-					<small>Copyright Seu Site 2017</small>
+					<small>Copyleft - Site da Silvia - adaptado pelo Miguel 2022</small>
 				</div>
 			</div>
 		</footer>
